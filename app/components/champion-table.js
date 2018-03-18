@@ -1,11 +1,20 @@
 import Component from '@ember/component';
 import config from 'lolsight/config/environment';
+import { inject as service } from '@ember/service';
+
 export default Component.extend({
-    champions: null,
+    champion: null,
     apiVersion: config.riotApiVersion,
 
-    didInsertElement() {
-        this.set('champion', this.get('model.champion'));
+    router: service(),
 
+    didInsertElement() {
+        //Split URL and find just the champ ID
+        const champId = window.location.pathname.split('/')[2];
+        fetch(`http://localhost:3001/champions/${champId}`).then(response => {
+            response.json().then(champion => {
+                this.set('champion', champion);
+            })
+        });
     },
 });

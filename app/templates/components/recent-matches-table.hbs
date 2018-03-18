@@ -1,0 +1,18 @@
+{{#each recentMatches as |match|}}
+    <table class="table is-fullwidth is-bordered">
+        <tbody>
+            <tr>
+                <th>gameId</th>
+                <td>{{match.gameId}}</td>
+            </tr>
+            <tr>
+                <th>champion</th>
+                <td>{{match.champion}}</td>
+            </tr>
+            <tr>
+                <th>timestamp</th>
+                <td>{{match.timestamp}}</td>
+            </tr>
+        </tbody>
+    </table>
+{{/each}}

@@ -1,10 +1,10 @@
 <table class="table is-bordered is-hoverable is-fullwidth">
     <tbody>
-        {{#each filteredChampions as |champion|}}
-            <tr {{action "champDetails" champion.key}}>
+        {{#each champions as |champion|}}
+            <tr {{action "champDetails" champion.id}}>
                 <td class="imageColumn">
                     <figure class="image is-64x64">
-                        <img src="http://ddragon.leagueoflegends.com/cdn/{{apiVersion}}/img/champion/{{champion.key}}.png">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/{{apiVersion}}/img/champion/{{champion.id}}.png">
                     </figure>
                 </td>
                 <td class="nameColumn"><strong>{{champion.name}}</strong> {{champion.title}}</td>

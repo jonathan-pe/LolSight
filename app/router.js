@@ -9,8 +9,9 @@ const Router = EmberRouter.extend({
 Router.map(function() {
     this.route('home', { path: '/' });
     this.route('champions', function() {
-        this.route('details', { path: '/:key' });
+        this.route('details', { path: '/:id' });
     });
+    this.route('summoner');
 });
 
 export default Router;
